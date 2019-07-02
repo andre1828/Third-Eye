@@ -32,7 +32,7 @@ Hitting enter will create a floating popup showing the content
 
 * **André Rodrigues** - [andre1828](https://github.com/andre1828)
 
-See also the list of [contributors](https://github.com/third_eye/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Third-Eye/contributors) who participated in this project.
 
 ## License
 
