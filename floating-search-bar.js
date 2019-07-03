@@ -12,12 +12,17 @@ function attachSearchBar(searchBar) {
   document.body.appendChild(searchBar)
 }
 
+function detachSearchBar() {
+  document.body.removeChild(document.querySelector("#thirdEyeSearchBar"))
+}
+
 function focusSearchBar() {
   document.querySelector("#searchBarInput").focus()
 }
 
 function createSearchBar() {
   var searchBar = document.createElement("div")
+  searchBar.id = "thirdEyeSearchBar"
   searchBar.style.width = "500px"
   searchBar.style.height = "60px"
   searchBar.style.backgroundColor = "#555151"
@@ -33,7 +38,7 @@ function createSearchBar() {
 
   var input = document.createElement("input")
   input.id = "searchBarInput"
-//   input.style.height = "100%"
+  //   input.style.height = "100%"
   input.style.backgroundColor = "#555151"
   input.style.color = "#17BEBB"
   input.style.fontSize = "xx-large"
@@ -52,8 +57,8 @@ function createSearchBar() {
       icon.src = magnifierIcon
     }
 
-    if(e.keyCode === 13) {
-        switchToPopup()
+    if (e.keyCode === 13) {
+      switchToPopup()
     }
   })
 
@@ -70,6 +75,25 @@ function createSearchBar() {
   return searchBar
 }
 
+function createPopup() {
+  var popup = document.createElement("div")
+  popup.style.width = "390px"
+  popup.style.height = "600px"
+  popup.style.backgroundColor = "#555151"
+  popup.style.position = "fixed"
+  popup.style.top = "26%"
+  popup.style.left = "50%"
+  popup.style.marginLeft = "-210px"
+  popup.style.zIndex = "10000"
+
+  return popup
+}
+
+function attachPopup(popup) {
+  document.body.appendChild(popup)
+}
+
 function switchToPopup() {
-    detachSearchBar()
+  detachSearchBar()
+  attachPopup(createPopup())
 }
