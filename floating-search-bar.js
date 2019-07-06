@@ -86,6 +86,14 @@ function createPopup() {
   popup.style.marginLeft = "-210px"
   popup.style.zIndex = "10000"
 
+  var closeIcon = document.createElement("img")
+  closeIcon.style.width = "38px"
+  closeIcon.style.height = "38px"
+  closeIcon.style.cssFloat = "right"
+  closeIcon.src = browser.runtime.getURL("popup-close.svg")
+
+  popup.appendChild(closeIcon)
+
   return popup
 }
 
