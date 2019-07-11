@@ -79,7 +79,7 @@ function createPopup() {
   var popup = document.createElement("div")
   popup.style.width = "390px"
   popup.style.height = "600px"
-  popup.style.backgroundColor = "#555151"
+  // popup.style.backgroundColor = "#555151"
   popup.style.position = "fixed"
   popup.style.top = "26%"
   popup.style.left = "50%"
