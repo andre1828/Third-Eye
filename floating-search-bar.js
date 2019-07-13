@@ -77,9 +77,10 @@ function createSearchBar() {
 
 function createPopup() {
   var popup = document.createElement("div")
+  popup.id = "thirdEyePopup"
   popup.style.width = "390px"
   popup.style.height = "600px"
-  // popup.style.backgroundColor = "#555151"
+  popup.style.backgroundColor = "#555151"
   popup.style.position = "fixed"
   popup.style.top = "26%"
   popup.style.left = "50%"
@@ -91,6 +92,7 @@ function createPopup() {
   closeIcon.style.height = "38px"
   closeIcon.style.cssFloat = "right"
   closeIcon.src = browser.runtime.getURL("popup-close.svg")
+  closeIcon.addEventListener("click", () => detachPopup())
 
   popup.appendChild(closeIcon)
 
@@ -99,6 +101,10 @@ function createPopup() {
 
 function attachPopup(popup) {
   document.body.appendChild(popup)
+}
+
+function detachPopup() {
+  document.body.removeChild(document.querySelector("#thirdEyePopup"))
 }
 
 function switchToPopup() {
