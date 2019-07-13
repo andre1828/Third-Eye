@@ -87,13 +87,14 @@ function createPopup() {
   popup.style.marginLeft = "-210px"
   popup.style.zIndex = "10000"
 
-  var openInTabicon = document.createElement("img")
-  openInTabicon.style.width = "28px"
-  openInTabicon.style.cssFloat = "right"
-  openInTabicon.style.paddingRight = "10px"
-  openInTabicon.style.paddingTop = "5px"
-  openInTabicon.src = browser.runtime.getURL("popup-create-tab.svg")
-  
+  var openInTabIcon = document.createElement("img")
+  openInTabIcon.style.width = "28px"
+  openInTabIcon.style.cssFloat = "right"
+  openInTabIcon.style.paddingRight = "10px"
+  openInTabIcon.style.paddingTop = "5px"
+  openInTabIcon.src = browser.runtime.getURL("popup-create-tab.svg")
+  openInTabIcon.addEventListener("click", () => openInTab())
+
   var closeIcon = document.createElement("img")
   closeIcon.style.width = "28px"
   closeIcon.style.cssFloat = "right"
@@ -103,7 +104,7 @@ function createPopup() {
   closeIcon.addEventListener("click", () => detachPopup())
 
   popup.appendChild(closeIcon)
-  popup.appendChild(openInTabicon)
+  popup.appendChild(openInTabIcon)
 
   return popup
 }
@@ -114,6 +115,12 @@ function attachPopup(popup) {
 
 function detachPopup() {
   document.body.removeChild(document.querySelector("#thirdEyePopup"))
+}
+
+function openInTab() {
+  browser.runtime
+    .sendMessage({ message: "open-in-tab" })
+    .then(error => alert(error))
 }
 
 function switchToPopup() {
