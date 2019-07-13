@@ -15,9 +15,7 @@ browser.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.message == "open-in-tab") {
     console.log("open the tab")
     browser.tabs.create({ url: "https://reddit.com/" }).then(
-      res => {
-        alert(res)
-      },
+      res => {},
       error => {
         alert(error)
       }
