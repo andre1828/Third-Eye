@@ -120,7 +120,7 @@ function detachPopup() {
 function openInTab() {
   browser.runtime
     .sendMessage({ message: "open-in-tab" })
-    .then(error => alert(error))
+    .then(res => {}, error => alert(error))
 }
 
 function switchToPopup() {
