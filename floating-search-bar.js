@@ -87,14 +87,23 @@ function createPopup() {
   popup.style.marginLeft = "-210px"
   popup.style.zIndex = "10000"
 
+  var openInTabicon = document.createElement("img")
+  openInTabicon.style.width = "28px"
+  openInTabicon.style.cssFloat = "right"
+  openInTabicon.style.paddingRight = "10px"
+  openInTabicon.style.paddingTop = "5px"
+  openInTabicon.src = browser.runtime.getURL("popup-create-tab.svg")
+  
   var closeIcon = document.createElement("img")
-  closeIcon.style.width = "38px"
-  closeIcon.style.height = "38px"
+  closeIcon.style.width = "28px"
   closeIcon.style.cssFloat = "right"
+  closeIcon.style.paddingRight = "10px"
+  closeIcon.style.paddingTop = "5px"
   closeIcon.src = browser.runtime.getURL("popup-close.svg")
   closeIcon.addEventListener("click", () => detachPopup())
 
   popup.appendChild(closeIcon)
+  popup.appendChild(openInTabicon)
 
   return popup
 }
