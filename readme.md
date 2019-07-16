@@ -2,6 +2,8 @@
 
 Search a term or visit an address without opening a new tab
 
+## **__Suspended due to technical issues__**
+I'm facing issues with cross-origin framing
 
 <!-- To install the extension, follow the appropriate link :
 - Google Chrome
